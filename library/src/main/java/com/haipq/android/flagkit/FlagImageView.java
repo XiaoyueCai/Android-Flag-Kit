@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.ImageView;
@@ -74,8 +75,8 @@ public class FlagImageView extends ImageView {
   }
 
   public void setCountryCode(String countryCode) {
-    countryCode = countryCode != null && !countryCode.isEmpty() ? countryCode.toLowerCase() : "";
-    if (!countryCode.equals(this.countryCode)) {
+    countryCode = !TextUtils.isEmpty(countryCode) ? countryCode.toLowerCase(Locale.ENGLISH) : "";
+    if (!TextUtils.equals(countryCode, this.countryCode)) {
       this.countryCode = countryCode;
       updateDrawableWithCountryCode();
     }
@@ -86,7 +87,7 @@ public class FlagImageView extends ImageView {
   }
 
   private void updateDrawableWithCountryCode() {
-    if (this.countryCode.isEmpty()) {
+    if (TextUtils.isEmpty(this.countryCode)) {
       setImageResource(0);
     } else {
       Resources resources = getResources();

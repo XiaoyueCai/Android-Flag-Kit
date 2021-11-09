@@ -2,7 +2,6 @@ package com.haipq.android.flagkit;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -45,7 +44,7 @@ public class FlagImageView extends ImageView {
           getContext().obtainStyledAttributes(attrs, R.styleable.FlagImageView, 0, 0);
       try {
         String countryCode = typedArray.getString(R.styleable.FlagImageView_countryCode);
-        if (countryCode != null && !countryCode.isEmpty()) setCountryCode(countryCode);
+        if (!TextUtils.isEmpty(countryCode)) setCountryCode(countryCode);
         else defaultLocal();
       } finally {
         typedArray.recycle();
@@ -67,7 +66,7 @@ public class FlagImageView extends ImageView {
 
   public void defaultLocal() {
     setCountryCode(Locale.getDefault().getCountry());
-    Log.d(TAG, " defaultLocal " + Locale.getDefault().getCountry());
+    Log.d(TAG, "defaultLocal " + Locale.getDefault().getCountry());
   }
 
   public String getCountryCode() {
@@ -75,7 +74,7 @@ public class FlagImageView extends ImageView {
   }
 
   public void setCountryCode(String countryCode) {
-    countryCode = !TextUtils.isEmpty(countryCode) ? countryCode.toLowerCase(Locale.ENGLISH) : "";
+    countryCode = !TextUtils.isEmpty(countryCode) ? countryCode.toUpperCase(Locale.ENGLISH) : "";
     if (!TextUtils.equals(countryCode, this.countryCode)) {
       this.countryCode = countryCode;
       updateDrawableWithCountryCode();
@@ -87,17 +86,6 @@ public class FlagImageView extends ImageView {
   }
 
   private void updateDrawableWithCountryCode() {
-    if (TextUtils.isEmpty(this.countryCode)) {
-      setImageResource(0);
-    } else {
-      Resources resources = getResources();
-      final String resName = "flag_" + this.countryCode;
-      final int resourceId =
-          resources.getIdentifier(resName, "drawable", getContext().getPackageName());
-      if (resourceId == 0) {
-        Log.w(TAG, " CountryCode is Wrong ");
-      }
-      setImageResource(resourceId); // resourceId = 0 is not found
-    }
+    setImageResource(FlagUtils.getFlagResIdByCountryCode(getContext(), this.countryCode));
   }
 }

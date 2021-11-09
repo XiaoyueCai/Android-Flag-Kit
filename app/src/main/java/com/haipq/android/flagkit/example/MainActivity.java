@@ -1,25 +1,23 @@
 package com.haipq.android.flagkit.example;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
-
+import androidx.appcompat.app.AppCompatActivity;
 import com.haipq.android.flagkit.FlagImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    FlagImageView flagImageView;
+  FlagImageView flagImageView;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
 
-        flagImageView = (FlagImageView) findViewById(R.id.flagView);
+    flagImageView = (FlagImageView) findViewById(R.id.flagView);
+  }
 
-    }
-
-    public void currentFlag(View v) {
-        flagImageView.defaultLocal();
-    }
+  public void currentFlag(View v) {
+    flagImageView.defaultLocal();
+  }
 }

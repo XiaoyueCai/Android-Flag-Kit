@@ -1,5 +1,4 @@
 # Android-Flag-Kit
-[![](https://jitpack.io/v/KaKaVip/Android-Flag-Kit.svg)](https://jitpack.io/#KaKaVip/Android-Flag-Kit)
 
 Free Resource from https://dribbble.com/shots/2828120-All-Flags-Freebie-Flag-Kit
 
@@ -11,7 +10,7 @@ Add it in your root build.gradle at the end of repositories:
 	allprojects {
 		repositories {
 			...
-			maven { url 'https://jitpack.io' }
+			mavenCentral()
 		}
 	}
 ```
@@ -20,7 +19,7 @@ Add it in your root build.gradle at the end of repositories:
 
 ```groovy
 	dependencies {
-	        compile 'com.github.KaKaVip:Android-Flag-Kit:v0.1'
+    	implementation 'io.github.xiaoyuecai:flag-kit:1.0.0'
 	}
 ```
 
@@ -29,24 +28,26 @@ Add it in your root build.gradle at the end of repositories:
 in XML
 
 ```xml
-<com.haipq.android.flagkit.FlagImageView
-        android:id="@+id/flagView"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        app:countryCode="US"
-        tools:src="@drawable/flag_us" />  // To Show in Preview
+<io.github.android.flagkit.FlagImageView
+    android:id="@+id/flagView"
+    android:layout_width="70dp"
+    android:layout_height="wrap_content"
+    app:countryCode="US"
+    tools:src="@drawable/flag_us" />
 ```
 
 in Java Code
 
-```
-FlagImageView flagImageView = (FlagImageView) findViewById(R.id.flagView);
+```java
+FlagImageView flagImageView = findViewById(R.id.flagView);
 
-flagImageView.setCountryCode("VN"); // with text code
+flagImageView.setCountryCode("US"); // with text code
 
 flagImageView.setCountryCode(Locale.CANADA); //  with Locale
 
 flagImageView.defaultLocal(); // Show current device
+
+int resId = FlagUtils.getFlagResIdByCountryCode(this, "US"); // get flag resId with country code
 
 ```
 

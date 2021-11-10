@@ -1,4 +1,4 @@
-package com.haipq.android.flagkit;
+package io.github.android.flagkit;
 
 import android.content.Context;
 import android.content.res.Resources;

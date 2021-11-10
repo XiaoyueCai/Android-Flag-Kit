@@ -1,4 +1,4 @@
-package com.haipq.android.flagkit.example;
+package io.github.android.flagkit.example;
 
 import static org.junit.Assert.*;
 

@@ -1,9 +1,9 @@
-package com.haipq.android.flagkit.example;
+package io.github.android.flagkit.example;
 
 import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
-import com.haipq.android.flagkit.FlagImageView;
+import io.github.android.flagkit.FlagImageView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    flagImageView = (FlagImageView) findViewById(R.id.flagView);
+    flagImageView = findViewById(R.id.flagView);
   }
 
   public void currentFlag(View v) {

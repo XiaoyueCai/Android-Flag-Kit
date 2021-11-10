@@ -1,10 +1,10 @@
-package com.haipq.android.flagkit.example;
+package io.github.android.flagkit.example;
 
 import static org.junit.Assert.*;
 
 import android.content.Context;
-import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.platform.app.InstrumentationRegistry;
+import androidx.test.runner.AndroidJUnit4;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -18,8 +18,8 @@ public class ExampleInstrumentedTest {
   @Test
   public void useAppContext() throws Exception {
     // Context of the app under test.
-    Context appContext = InstrumentationRegistry.getTargetContext();
+    Context appContext = InstrumentationRegistry.getInstrumentation().getContext();
 
-    assertEquals("com.haipq.android.flagkit.example", appContext.getPackageName());
+    assertEquals("io.github.android.flagkit.example", appContext.getPackageName());
   }
 }

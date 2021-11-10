@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#cfcfcf"
-    android:orientation="vertical"
     android:gravity="center"
-    tools:context="com.haipq.android.flagkit.example.MainActivity">
+    android:orientation="vertical"
+    tools:context="io.github.android.flagkit.example.MainActivity">
 
-    <com.haipq.android.flagkit.FlagImageView
+    <io.github.android.flagkit.FlagImageView
         android:id="@+id/flagView"
         android:layout_width="70dp"
         android:layout_height="wrap_content"
@@ -17,11 +17,10 @@
         tools:src="@drawable/flag_us" />
 
     <Button
-        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Default Local"
+        android:layout_marginTop="20dp"
         android:onClick="currentFlag"
-        />
+        android:text="Default Local" />
 
 </LinearLayout>

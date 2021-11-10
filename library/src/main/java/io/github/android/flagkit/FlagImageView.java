@@ -1,4 +1,4 @@
-package com.haipq.android.flagkit;
+package io.github.android.flagkit;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -9,7 +9,6 @@ import android.util.Log;
 import android.widget.ImageView;
 import java.util.Locale;
 
-/** Created by haipq on 6/9/17. */
 @SuppressLint("AppCompatCustomView")
 public class FlagImageView extends ImageView {
 

@@ -7,20 +7,20 @@ Free Resource from https://dribbble.com/shots/2828120-All-Flags-Freebie-Flag-Kit
 Add it in your root build.gradle at the end of repositories:
 
 ```groovy
-	allprojects {
-		repositories {
-			...
-			mavenCentral()
-		}
-	}
+    allprojects {
+        repositories {
+            ...
+            mavenCentral()
+        }
+    }
 ```
 
 #### Step 2. Add the dependency
 
 ```groovy
-	dependencies {
-    	implementation 'io.github.xiaoyuecai:flag-kit:1.0.0'
-	}
+    dependencies {
+        implementation 'io.github.xiaoyuecai:flag-kit:1.0.0'
+    }
 ```
 
 #### Step 3. Using
